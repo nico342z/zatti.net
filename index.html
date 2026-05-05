@@ -559,15 +559,15 @@
       'hero.cta1':      'Parliamoci',
       'hero.cta2':      'Chi sono ↓',
       'about.label':    'Chi sono',
-      ‘about.title’:    ‘Un po\’ di contesto’,
-      ‘about.p1’:       ‘Sono un freelance con base in Italia, laureato in <strong>Ingegneria Elettronica</strong> a Udine. Ho esperienze di vita e lavoro all\’estero, e da luglio 2024 lavoro in proprio come consulente.’,
-      ‘about.p2’:       ‘Mi piace entrare nei progetti con concretezza: capire dove si blocca la crescita, mettere in piedi i processi che mancano e portare avanti le cose. Preferisco lavorare con chi ha bisogno di qualcuno che <strong>faccia</strong>, non solo che consiglia.’,
+      'about.title':    'Un po\' di contesto',
+      'about.p1':       'Sono un freelance con base in Italia, laureato in <strong>Ingegneria Elettronica</strong> a Udine. Ho esperienze di vita e lavoro all\'estero, e da luglio 2024 lavoro in proprio come consulente.',
+      'about.p2':       'Mi piace entrare nei progetti con concretezza: capire dove si blocca la crescita, mettere in piedi i processi che mancano e portare avanti le cose. Preferisco lavorare con chi ha bisogno di qualcuno che <strong>faccia</strong>, non solo che consiglia.',
       'services.label': 'Servizi',
       'services.title': 'Cosa faccio',
       'svc1.name':      'Business Development',
       'svc1.desc':      'Nuovi clienti, partnership e canali di distribuzione. Aiuto a strutturare la crescita commerciale in modo sostenibile e misurabile.',
       'svc2.name':      'Project Management',
-      'svc2.desc':      'Coordino progetti tecnici e commerciali dall’inizio alla fine. Processi chiari, team allineati, scadenze rispettate.',
+      'svc2.desc':      "Coordino progetti tecnici e commerciali dall'inizio alla fine. Processi chiari, team allineati, scadenze rispettate.",
       'svc3.name':      'Operazioni',
       'svc3.desc':      'Ottimizzazione dei processi interni, automazioni e strumenti per fare di più con meno. Meno sprechi, più velocità.',
       'now.label':      'Ora',
@@ -584,12 +584,12 @@
     en: {
       'nav.cta':        'Get in touch',
       'hero.sub':       'Freelance Business Developer and Project Manager. I work with startups and SMEs that want to grow.',
-      'hero.cta1':      "Let’s talk",
+      'hero.cta1':      "Let's talk",
       'hero.cta2':      'About me ↓',
       'about.label':    'About',
       'about.title':    'A bit of context',
-      ‘about.p1’:       ‘I\’m a freelancer based in Italy, with a degree in <strong>Electronic Engineering</strong> from Udine. I have experience living and working abroad, and since July 2024 I\’ve been working independently as a consultant.’,
-      ‘about.p2’:       ‘I like getting into projects with a concrete mindset: finding where growth gets stuck, putting the missing processes in place, and moving things forward. I work best with people who need someone who <strong>does</strong>, not just someone who advises.’,
+      'about.p1':       'I\'m a freelancer based in Italy, with a degree in <strong>Electronic Engineering</strong> from Udine. I have experience living and working abroad, and since July 2024 I\'ve been working independently as a consultant.',
+      'about.p2':       'I like getting into projects with a concrete mindset: finding where growth gets stuck, putting the missing processes in place, and moving things forward. I work best with people who need someone who <strong>does</strong>, not just someone who advises.',
       'services.label': 'Services',
       'services.title': 'What I do',
       'svc1.name':      'Business Development',
@@ -599,7 +599,7 @@
       'svc3.name':      'Operations',
       'svc3.desc':      'Internal process optimisation, automation and tooling to do more with less. Less waste, more speed.',
       'now.label':      'Now',
-      'now.title':      'What I’m working on',
+      'now.title':      "What I'm working on",
       'now.live':       'Ongoing',
       'now.live2':      'Ongoing',
       'now1.role':      'Freelance Consulting',
@@ -607,7 +607,7 @@
       'now2.body':      'Financial management for ESN Italy, an NGO supporting international student mobility. Budget, grant applications and reporting.',
       'contact.label':  'Contact',
       'contact.title':  'Got a project in mind?',
-      'contact.body':   'Write to me, let’s talk. No elaborate pitch needed — just tell me what you’re working on.',
+      'contact.body':   "Write to me, let's talk. No elaborate pitch needed — just tell me what you're working on.",
     }
   };
 
@@ -643,6 +643,13 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
   }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
   document.querySelectorAll('.fi').forEach(el => io.observe(el));
+  // Fallback: reveal elements already in viewport on load (e.g. in iframes)
+  requestAnimationFrame(() => {
+    document.querySelectorAll('.fi').forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('vis');
+    });
+  });
 
   // ── emoji cycle ───────────────────────────────────────
   const emojis = ['👋','💼','🚀','📈','🤝','🎯'];
