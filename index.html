@@ -19,7 +19,7 @@
       --ink:    #111111;
       --mid:    #888480;
       --rule:   #E6E1DB;
-      --accent: #1d4ed8;
+      --accent: #0a2540;
       --white:  #ffffff;
     }
 
@@ -410,6 +410,14 @@
       .sec-header { flex-direction: column; gap: 6px; }
       .nav-right { gap: 14px; }
     }
+    #hero-emoji {
+      display: inline-block;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    #hero-emoji.fade-out {
+      opacity: 0;
+      transform: scale(0.7);
+    }
   </style>
 </head>
 <body>
@@ -419,8 +427,8 @@
     <a href="#hero" class="nav-logo">NZ</a>
     <div class="nav-right">
       <div class="lang-switch" role="group" aria-label="Language">
-        <button class="lang-btn active" data-lang="it">IT</button>
-        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn active" data-lang="it">🇮🇹 IT</button>
+        <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
       </div>
       <a href="#contact-section" class="nav-cta" data-key="nav.cta">Scrivimi</a>
     </div>
@@ -430,13 +438,13 @@
 <!-- HERO -->
 <section id="hero">
   <div class="hero-top fi">
-    <h1 class="hero-name">Ciao, sono<br><em>Nicola Zatti</em> 👋</h1>
+    <h1 class="hero-name">Ciao, sono<br><em>Nicola Zatti</em> <span id="hero-emoji">👋</span></h1>
     <div class="hero-photo">
       <img src="images/profile_img.png" alt="Nicola Zatti">
     </div>
   </div>
   <div class="hero-bottom fi">
-    <p class="hero-sub" data-key="hero.sub">Freelance Business Developer e Project Manager. Lavoro con startup e PMI che vogliono crescere sul serio.</p>
+    <p class="hero-sub" data-key="hero.sub">Freelance Business Developer e Project Manager. Lavoro con startup e PMI che vogliono crescere.</p>
     <div class="hero-links">
       <a href="#contact-section" class="btn-fill" data-key="hero.cta1">Parliamoci</a>
       <a href="#about" class="btn-text" data-key="hero.cta2">Chi sono ↓</a>
@@ -452,8 +460,8 @@
     <h2 class="sec-title" data-key="about.title">Un po' di contesto</h2>
   </div>
   <div class="about-text">
-    <p data-key="about.p1">Sono un freelance con base in Italia, laureato in <strong>Ingegneria Elettronica</strong> a Udine. Ho vissuto e lavorato ad Amsterdam, studiato in Spagna durante l'Erasmus, e da luglio 2024 lavoro in proprio come consulente.</p>
-    <p data-key="about.p2">Mi piace entrare nei progetti con concretezza: capire dove si blocca la crescita, mettere in piedi i processi che mancano e portare avanti le cose. Lavoro meglio con i <strong>founder che hanno bisogno di qualcuno che faccia</strong>, non solo che consiglia.</p>
+    <p data-key="about.p1">Sono un freelance con base in Italia, laureato in <strong>Ingegneria Elettronica</strong> a Udine. Ho esperienze di vita e lavoro all'estero, e da luglio 2024 lavoro in proprio come consulente.</p>
+    <p data-key="about.p2">Mi piace entrare nei progetti con concretezza: capire dove si blocca la crescita, mettere in piedi i processi che mancano e portare avanti le cose. Preferisco lavorare con chi ha bisogno di qualcuno che <strong>faccia</strong>, non solo che consiglia.</p>
   </div>
 </div>
 </div>
@@ -547,13 +555,13 @@
   const t = {
     it: {
       'nav.cta':        'Scrivimi',
-      'hero.sub':       'Freelance Business Developer e Project Manager. Lavoro con startup e PMI che vogliono crescere sul serio.',
+      'hero.sub':       'Freelance Business Developer e Project Manager. Lavoro con startup e PMI che vogliono crescere.',
       'hero.cta1':      'Parliamoci',
       'hero.cta2':      'Chi sono ↓',
       'about.label':    'Chi sono',
       'about.title':    'Un po’ di contesto',
-      'about.p1':       'Sono un freelance con base in Italia, laureato in <strong>Ingegneria Elettronica</strong> a Udine. Ho vissuto e lavorato ad Amsterdam, studiato in Spagna durante l’Erasmus, e da luglio 2024 lavoro in proprio come consulente.',
-      'about.p2':       'Mi piace entrare nei progetti con concretezza: capire dove si blocca la crescita, mettere in piedi i processi che mancano e portare avanti le cose. Lavoro meglio con i <strong>founder che hanno bisogno di qualcuno che faccia</strong>, non solo che consiglia.',
+      ‘about.p1’:       ‘Sono un freelance con base in Italia, laureato in <strong>Ingegneria Elettronica</strong> a Udine. Ho esperienze di vita e lavoro all\’estero, e da luglio 2024 lavoro in proprio come consulente.’,
+      ‘about.p2’:       ‘Mi piace entrare nei progetti con concretezza: capire dove si blocca la crescita, mettere in piedi i processi che mancano e portare avanti le cose. Preferisco lavorare con chi ha bisogno di qualcuno che <strong>faccia</strong>, non solo che consiglia.’,
       'services.label': 'Servizi',
       'services.title': 'Cosa faccio',
       'svc1.name':      'Business Development',
@@ -575,13 +583,13 @@
     },
     en: {
       'nav.cta':        'Get in touch',
-      'hero.sub':       'Freelance Business Developer and Project Manager. I work with startups and SMEs that want to grow for real.',
+      'hero.sub':       'Freelance Business Developer and Project Manager. I work with startups and SMEs that want to grow.',
       'hero.cta1':      "Let’s talk",
       'hero.cta2':      'About me ↓',
       'about.label':    'About',
       'about.title':    'A bit of context',
-      'about.p1':       'I’m a freelancer based in Italy, with a degree in <strong>Electronic Engineering</strong> from Udine. I’ve lived and worked in Amsterdam, studied in Spain on Erasmus, and since July 2024 I’ve been working independently as a consultant.',
-      'about.p2':       'I like getting into projects with a concrete mindset: finding where growth gets stuck, putting the missing processes in place, and moving things forward. I work best with <strong>founders who need someone who does</strong>, not just someone who advises.',
+      ‘about.p1’:       ‘I\’m a freelancer based in Italy, with a degree in <strong>Electronic Engineering</strong> from Udine. I have experience living and working abroad, and since July 2024 I\’ve been working independently as a consultant.’,
+      ‘about.p2’:       ‘I like getting into projects with a concrete mindset: finding where growth gets stuck, putting the missing processes in place, and moving things forward. I work best with people who need someone who <strong>does</strong>, not just someone who advises.’,
       'services.label': 'Services',
       'services.title': 'What I do',
       'svc1.name':      'Business Development',
@@ -635,6 +643,19 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
   }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
   document.querySelectorAll('.fi').forEach(el => io.observe(el));
+
+  // ── emoji cycle ───────────────────────────────────────
+  const emojis = ['👋','💼','🚀','📈','🤝','🎯'];
+  let emojiIdx = 0;
+  const emojiEl = document.getElementById('hero-emoji');
+  setInterval(() => {
+    emojiEl.classList.add('fade-out');
+    setTimeout(() => {
+      emojiIdx = (emojiIdx + 1) % emojis.length;
+      emojiEl.textContent = emojis[emojiIdx];
+      emojiEl.classList.remove('fade-out');
+    }, 400);
+  }, 4000);
 </script>
 
 </body>
