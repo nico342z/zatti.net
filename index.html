@@ -126,6 +126,35 @@
     }
     .nav-cta:hover { color: var(--accent); border-color: var(--accent); }
 
+    /* ── BG GRADIENT BLOBS ── */
+    .hero-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .hero-bg .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+    }
+    .hero-bg .blob1 {
+      width: 700px; height: 700px;
+      top: -200px; right: -150px;
+      background: radial-gradient(circle, rgba(10,37,64,0.35) 0%, transparent 65%);
+    }
+    .hero-bg .blob2 {
+      width: 580px; height: 580px;
+      bottom: -120px; left: -120px;
+      background: radial-gradient(circle, rgba(56,189,248,0.30) 0%, transparent 65%);
+    }
+    .hero-bg .blob3 {
+      width: 400px; height: 400px;
+      top: 28vh; left: 32vw;
+      background: radial-gradient(circle, rgba(59,130,246,0.20) 0%, transparent 65%);
+    }
+
     /* ── HERO ── */
     #hero {
       min-height: 100vh;
@@ -135,6 +164,8 @@
       padding: 80px 32px 64px;
       max-width: 960px;
       margin: 0 auto;
+      position: relative;
+      z-index: 1;
     }
     .hero-top {
       display: flex;
@@ -434,6 +465,13 @@
     </div>
   </div>
 </nav>
+
+<!-- BG GRADIENT BLOBS -->
+<div class="hero-bg" aria-hidden="true">
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
+</div>
 
 <!-- HERO -->
 <section id="hero">
