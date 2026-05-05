@@ -15,10 +15,10 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:     #eeeceb;
-      --ink:    #110f0e;
-      --mid:    #78746f;
-      --rule:   #e6e2de;
+      --bg:     #F7F4F0;
+      --ink:    #111111;
+      --mid:    #888480;
+      --rule:   #E6E1DB;
       --accent: #1d4ed8;
       --white:  #ffffff;
     }
@@ -62,9 +62,9 @@
     }
     nav.scrolled::after { opacity: 1; }
     nav.scrolled {
-      background: rgba(247,245,240,0.94);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      background: rgba(247,244,240,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
     }
     .nav-inner {
       max-width: 960px;
@@ -131,8 +131,8 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      padding: 0 32px 64px;
+      justify-content: center;
+      padding: 80px 32px 64px;
       max-width: 960px;
       margin: 0 auto;
     }
@@ -332,6 +332,22 @@
       padding-top: 4px;
     }
 
+    /* ── SECTION BACKGROUNDS ── */
+    #about-section    { background: #ffffff; }
+    #services-section { background: #111111; }
+    #now-section      { background: #EDE9E3; }
+
+    #services-section .section { border-top: none; }
+    #services-section .sec-label { color: rgba(255,255,255,0.35); }
+    #services-section .sec-title { color: #fff; }
+    #services-section .svc-row { border-color: rgba(255,255,255,0.08); }
+    #services-section .svc-row:first-child { border-color: rgba(255,255,255,0.08); }
+    #services-section .svc-name { color: #fff; }
+    #services-section .svc-desc { color: rgba(255,255,255,0.5); }
+    #services-section .svc-num  { color: rgba(255,255,255,0.18); }
+    #services-section .svc-row:hover .svc-num  { color: #60a5fa; }
+    #services-section .svc-row:hover .svc-name { color: #60a5fa; }
+
     /* ── CONTACT ── */
     #contact-section { background: var(--ink); }
     #contact-section .section { border-top: none; }
@@ -429,6 +445,7 @@
 </section>
 
 <!-- ABOUT -->
+<div id="about-section">
 <div class="section fi" id="about">
   <div class="sec-header">
     <span class="sec-label" data-key="about.label">Chi sono</span>
@@ -439,8 +456,10 @@
     <p data-key="about.p2">Mi piace entrare nei progetti con concretezza: capire dove si blocca la crescita, mettere in piedi i processi che mancano e portare avanti le cose. Lavoro meglio con i <strong>founder che hanno bisogno di qualcuno che faccia</strong>, non solo che consiglia.</p>
   </div>
 </div>
+</div>
 
 <!-- COSA FACCIO -->
+<div id="services-section">
 <div class="section fi" id="cosa-faccio">
   <div class="sec-header">
     <span class="sec-label" data-key="services.label">Servizi</span>
@@ -464,8 +483,10 @@
     </div>
   </div>
 </div>
+</div>
 
 <!-- ATTUALMENTE -->
+<div id="now-section">
 <div class="section fi" id="attuale">
   <div class="sec-header">
     <span class="sec-label" data-key="now.label">Ora</span>
@@ -487,6 +508,7 @@
       <p class="now-body" data-key="now2.body">Gestione finanziaria per ESN Italy, ONG che supporta la mobilità studentesca internazionale. Budget, grant e rendicontazione.</p>
     </div>
   </div>
+</div>
 </div>
 
 <!-- CONTACT -->
