@@ -1,123 +1,619 @@
-
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>zatti.net</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
-	<meta name="keywords" content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-	<meta name="author" content="FreeHTML5.co" />
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nicola Zatti</title>
+  <meta name="description" content="Nicola Zatti — Freelance Business Developer e Project Manager.">
+  <meta name="author" content="Nicola Zatti">
 
-  <!-- 
-	//////////////////////////////////////////////////////
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
 
-	FREE HTML5 TEMPLATE 
-	DESIGNED & DEVELOPED by FreeHTML5.co
-		
-	Website: 		http://freehtml5.co/
-	Email: 			info@freehtml5.co
-	Twitter: 		http://twitter.com/fh5co
-	Facebook: 		https://www.facebook.com/fh5co
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-	//////////////////////////////////////////////////////
-	 -->
+    :root {
+      --bg:     #eeeceb;
+      --ink:    #110f0e;
+      --mid:    #78746f;
+      --rule:   #e6e2de;
+      --accent: #1d4ed8;
+      --white:  #ffffff;
+    }
 
-  	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+    html { scroll-behavior: smooth; }
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.ico">
+    body {
+      font-family: 'Lato', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
 
-	<!-- <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'> -->
-	
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='320' height='320' filter='url(%23g)'/%3E%3C/svg%3E");
+      opacity: 0.045;
+    }
 
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 50;
+      padding: 20px 0;
+      transition: background 0.3s, padding 0.3s;
+    }
+    nav::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 1px;
+      background: var(--rule);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    nav.scrolled::after { opacity: 1; }
+    nav.scrolled {
+      background: rgba(247,245,240,0.94);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .nav-logo {
+      font-weight: 900;
+      font-size: 0.95rem;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    /* language switcher */
+    .lang-switch {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      background: rgba(0,0,0,0.06);
+      border-radius: 6px;
+      padding: 3px;
+    }
+    .lang-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--mid);
+      padding: 4px 9px;
+      border-radius: 4px;
+      transition: background 0.15s, color 0.15s;
+    }
+    .lang-btn.active {
+      background: var(--white);
+      color: var(--ink);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+    .nav-cta {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1.5px solid var(--ink);
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .nav-cta:hover { color: var(--accent); border-color: var(--accent); }
 
-	</head>
-	<body style="background-image: url(images/bg_img.png);">
-	
-	<div id="fh5co-main">
-		<div class="fh5co-tab-wrap">
-			
-			<div class="fh5co-tab-content active" data-content="1">
-				<div class="fh5co-content-inner text-center">
-                    
-					<div class="row row-bottom-padded-sm">
-						<div class="col-md-12" style="text-align: left;">
-							<div style="text-align: center;">
-								<h1 style="font-size: xxxx-large;">zatti.net</h1>
-							  </div>
-							<div style="display: flex; flex-wrap: wrap;">
-								<div style="flex: 1;">
-									<p>Mi chiamo Nicola Zatti, classe 1998, nato nel nord est d'Italia. Da sempre appassionato di elettronica e materie tecniche sono studente presso l'Università degli Studi di Udine</p>
-								</div>
-								<div style="flex: 1; text-align: right;">
-									<img src="images/profile_img.png" alt="Immagine profilo" style="border-radius: 50%; width: 200px; height: 200px;">
-								</div>
-							</div>
-						</div>
-					</div>
-                    
-					<ul class="fh5co-social">
-						<li><a href="mailto:info@zatti.net"><i class="icon-envelope"></i></a></li>
-						<li><a href="https://twitter.com/nicozatti"><i class="icon-twitter"></i></a></li>
-						<li><a href="https://www.instagram.com/_nicozatti/"><i class="icon-instagram"></i></a></li>
-						<li><a href="https://www.linkedin.com/in/nicozatti/"><i class="icon-linkedin"></i></a></li>
-					</ul>
-				</div>
-			</div>
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 32px 64px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 32px;
+    }
+    .hero-name {
+      font-weight: 900;
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      flex: 1;
+    }
+    .hero-name em {
+      font-style: normal;
+      color: var(--accent);
+    }
+    .hero-photo {
+      flex-shrink: 0;
+      margin-left: 48px;
+      margin-bottom: 8px;
+    }
+    .hero-photo img {
+      width: 148px;
+      height: 148px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .hero-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-top: 28px;
+      border-top: 1px solid var(--rule);
+    }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--mid);
+      max-width: 400px;
+      line-height: 1.7;
+      font-weight: 400;
+    }
+    .hero-links {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-shrink: 0;
+      margin-left: 32px;
+    }
+    .btn-fill {
+      background: var(--ink);
+      color: var(--white);
+      padding: 11px 22px;
+      border-radius: 6px;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.83rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-fill:hover { background: var(--accent); }
+    .btn-text {
+      font-size: 0.83rem;
+      font-weight: 700;
+      color: var(--mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .btn-text:hover { color: var(--ink); }
 
-		</div>
-		<footer id="fh5co-footer">
-			<div class="row">
-				<div class="col-md-6 col-md-offset-3 text-center">
-					<small>
-						<h5> &copy; <script>document.write(new Date().getFullYear())</script> Nicola Zatti - Template: <a href="http://freehtml5.co" target="_blank">FreeHTML5.co</a></h5>
-					</small>
-				</div>
-			</div>
-		</footer>
-	</div>
-	
-	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Easy PieChart -->
-	<script src="js/jquery.easypiechart.min.js"></script>
-	<!-- MAIN JS -->
-	<script src="js/main.js"></script>
+    /* ── SEZIONI ── */
+    .section {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 80px 32px;
+      border-top: 1px solid var(--rule);
+    }
+    .sec-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 52px;
+    }
+    .sec-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+    .sec-title {
+      font-weight: 900;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: var(--ink);
+    }
 
-	</body>
+    /* fade */
+    .fi { opacity: 0; transform: translateY(18px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .fi.vis { opacity: 1; transform: translateY(0); }
+
+    /* ── ABOUT ── */
+    .about-text { max-width: 580px; }
+    .about-text p {
+      font-size: 1.02rem;
+      color: var(--mid);
+      line-height: 1.85;
+      margin-bottom: 16px;
+      font-weight: 400;
+    }
+    .about-text p:last-child { margin-bottom: 0; }
+    .about-text strong { color: var(--ink); font-weight: 700; }
+
+    /* ── SERVIZI ── */
+    .svc-row {
+      display: grid;
+      grid-template-columns: 44px 1fr 2fr;
+      gap: 0 40px;
+      align-items: baseline;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .svc-row:first-child { border-top: 1px solid var(--rule); }
+    .svc-num {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--rule);
+      letter-spacing: 0.05em;
+      padding-top: 3px;
+      transition: color 0.2s;
+    }
+    .svc-name {
+      font-weight: 900;
+      font-size: 1.05rem;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+      transition: color 0.2s;
+    }
+    .svc-desc {
+      font-size: 0.88rem;
+      color: var(--mid);
+      line-height: 1.7;
+    }
+    .svc-row:hover .svc-num  { color: var(--accent); }
+    .svc-row:hover .svc-name { color: var(--accent); }
+
+    /* ── ATTUALMENTE ── */
+    .now-row {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 40px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--rule);
+      align-items: start;
+    }
+    .now-row:first-child { border-top: 1px solid var(--rule); }
+    .now-meta { display: flex; flex-direction: column; gap: 6px; }
+    .now-live {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #16a34a;
+    }
+    .now-live::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #4ade80;
+      flex-shrink: 0;
+      animation: blink 2.5s ease infinite;
+    }
+    @keyframes blink {
+      0%,100% { opacity: 1; }
+      50%      { opacity: 0.4; }
+    }
+    .now-role {
+      font-weight: 900;
+      font-size: 1.05rem;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+    }
+    .now-body {
+      font-size: 0.88rem;
+      color: var(--mid);
+      line-height: 1.75;
+      padding-top: 4px;
+    }
+
+    /* ── CONTACT ── */
+    #contact-section { background: var(--ink); }
+    #contact-section .section { border-top: none; }
+    #contact-section .sec-label { color: rgba(255,255,255,0.3); }
+    #contact-section .sec-title { color: var(--white); }
+    .contact-body {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 48px;
+    }
+    .contact-body p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.8;
+      max-width: 380px;
+    }
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-end;
+      flex-shrink: 0;
+    }
+    .clink {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+    .clink:hover { color: var(--white); }
+    .clink svg { width: 15px; height: 15px; flex-shrink: 0; opacity: 0.45; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #090908;
+      padding: 20px 32px;
+    }
+    footer p {
+      max-width: 960px;
+      margin: 0 auto;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.18);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 680px) {
+      .hero-photo { display: none; }
+      .hero-bottom { flex-direction: column; align-items: flex-start; gap: 24px; }
+      .hero-links { margin-left: 0; }
+      .svc-row { grid-template-columns: 1fr; gap: 6px; }
+      .svc-num { display: none; }
+      .now-row { grid-template-columns: 1fr; gap: 10px; }
+      .contact-body { flex-direction: column; align-items: flex-start; }
+      .contact-links { align-items: flex-start; }
+      .sec-header { flex-direction: column; gap: 6px; }
+      .nav-right { gap: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">NZ</a>
+    <div class="nav-right">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button class="lang-btn active" data-lang="it">IT</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="#contact-section" class="nav-cta" data-key="nav.cta">Scrivimi</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-top fi">
+    <h1 class="hero-name">Ciao, sono<br><em>Nicola Zatti</em> 👋</h1>
+    <div class="hero-photo">
+      <img src="images/profile_img.png" alt="Nicola Zatti">
+    </div>
+  </div>
+  <div class="hero-bottom fi">
+    <p class="hero-sub" data-key="hero.sub">Freelance Business Developer e Project Manager. Lavoro con startup e PMI che vogliono crescere sul serio.</p>
+    <div class="hero-links">
+      <a href="#contact-section" class="btn-fill" data-key="hero.cta1">Parliamoci</a>
+      <a href="#about" class="btn-text" data-key="hero.cta2">Chi sono ↓</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<div class="section fi" id="about">
+  <div class="sec-header">
+    <span class="sec-label" data-key="about.label">Chi sono</span>
+    <h2 class="sec-title" data-key="about.title">Un po' di contesto</h2>
+  </div>
+  <div class="about-text">
+    <p data-key="about.p1">Sono un freelance con base in Italia, laureato in <strong>Ingegneria Elettronica</strong> a Udine. Ho vissuto e lavorato ad Amsterdam, studiato in Spagna durante l'Erasmus, e da luglio 2024 lavoro in proprio come consulente.</p>
+    <p data-key="about.p2">Mi piace entrare nei progetti con concretezza: capire dove si blocca la crescita, mettere in piedi i processi che mancano e portare avanti le cose. Lavoro meglio con i <strong>founder che hanno bisogno di qualcuno che faccia</strong>, non solo che consiglia.</p>
+  </div>
+</div>
+
+<!-- COSA FACCIO -->
+<div class="section fi" id="cosa-faccio">
+  <div class="sec-header">
+    <span class="sec-label" data-key="services.label">Servizi</span>
+    <h2 class="sec-title" data-key="services.title">Cosa faccio</h2>
+  </div>
+  <div>
+    <div class="svc-row">
+      <span class="svc-num">01</span>
+      <span class="svc-name" data-key="svc1.name">Business Development</span>
+      <span class="svc-desc" data-key="svc1.desc">Nuovi clienti, partnership e canali di distribuzione. Aiuto a strutturare la crescita commerciale in modo sostenibile e misurabile.</span>
+    </div>
+    <div class="svc-row">
+      <span class="svc-num">02</span>
+      <span class="svc-name" data-key="svc2.name">Project Management</span>
+      <span class="svc-desc" data-key="svc2.desc">Coordino progetti tecnici e commerciali dall'inizio alla fine. Processi chiari, team allineati, scadenze rispettate.</span>
+    </div>
+    <div class="svc-row">
+      <span class="svc-num">03</span>
+      <span class="svc-name" data-key="svc3.name">Operazioni</span>
+      <span class="svc-desc" data-key="svc3.desc">Ottimizzazione dei processi interni, automazioni e strumenti per fare di più con meno. Meno sprechi, più velocità.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ATTUALMENTE -->
+<div class="section fi" id="attuale">
+  <div class="sec-header">
+    <span class="sec-label" data-key="now.label">Ora</span>
+    <h2 class="sec-title" data-key="now.title">Su cosa lavoro</h2>
+  </div>
+  <div>
+    <div class="now-row">
+      <div class="now-meta">
+        <span class="now-live" data-key="now.live">In corso</span>
+        <span class="now-role" data-key="now1.role">Consulenza Freelance</span>
+      </div>
+      <p class="now-body" data-key="now1.body">Supporto a PMI e startup nella crescita operativa e commerciale. Lavoro principalmente in modalità ibrida tra Padova e remoto.</p>
+    </div>
+    <div class="now-row">
+      <div class="now-meta">
+        <span class="now-live" data-key="now.live2">In corso</span>
+        <span class="now-role">Treasurer @ ESN Italy</span>
+      </div>
+      <p class="now-body" data-key="now2.body">Gestione finanziaria per ESN Italy, ONG che supporta la mobilità studentesca internazionale. Budget, grant e rendicontazione.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact-section">
+  <div class="section fi">
+    <div class="sec-header">
+      <span class="sec-label" data-key="contact.label">Contatti</span>
+      <h2 class="sec-title" data-key="contact.title">Hai un progetto in mente?</h2>
+    </div>
+    <div class="contact-body">
+      <p data-key="contact.body">Scrivimi, parliamo. Nessun pitch elaborato — basta dirmi su cosa stai lavorando.</p>
+      <div class="contact-links">
+        <a href="mailto:info@zatti.net" class="clink">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          info@zatti.net
+        </a>
+        <a href="https://www.linkedin.com/in/nicozatti/" target="_blank" rel="noopener" class="clink">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://twitter.com/nicozatti" target="_blank" rel="noopener" class="clink">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          Twitter / X
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© <span id="yr"></span> Nicola Zatti</p>
+</footer>
+
+<script>
+  // ── translations ──────────────────────────────────────
+  const t = {
+    it: {
+      'nav.cta':        'Scrivimi',
+      'hero.sub':       'Freelance Business Developer e Project Manager. Lavoro con startup e PMI che vogliono crescere sul serio.',
+      'hero.cta1':      'Parliamoci',
+      'hero.cta2':      'Chi sono ↓',
+      'about.label':    'Chi sono',
+      'about.title':    'Un po’ di contesto',
+      'about.p1':       'Sono un freelance con base in Italia, laureato in <strong>Ingegneria Elettronica</strong> a Udine. Ho vissuto e lavorato ad Amsterdam, studiato in Spagna durante l’Erasmus, e da luglio 2024 lavoro in proprio come consulente.',
+      'about.p2':       'Mi piace entrare nei progetti con concretezza: capire dove si blocca la crescita, mettere in piedi i processi che mancano e portare avanti le cose. Lavoro meglio con i <strong>founder che hanno bisogno di qualcuno che faccia</strong>, non solo che consiglia.',
+      'services.label': 'Servizi',
+      'services.title': 'Cosa faccio',
+      'svc1.name':      'Business Development',
+      'svc1.desc':      'Nuovi clienti, partnership e canali di distribuzione. Aiuto a strutturare la crescita commerciale in modo sostenibile e misurabile.',
+      'svc2.name':      'Project Management',
+      'svc2.desc':      'Coordino progetti tecnici e commerciali dall’inizio alla fine. Processi chiari, team allineati, scadenze rispettate.',
+      'svc3.name':      'Operazioni',
+      'svc3.desc':      'Ottimizzazione dei processi interni, automazioni e strumenti per fare di più con meno. Meno sprechi, più velocità.',
+      'now.label':      'Ora',
+      'now.title':      'Su cosa lavoro',
+      'now.live':       'In corso',
+      'now.live2':      'In corso',
+      'now1.role':      'Consulenza Freelance',
+      'now1.body':      'Supporto a PMI e startup nella crescita operativa e commerciale. Lavoro principalmente in modalità ibrida tra Padova e remoto.',
+      'now2.body':      'Gestione finanziaria per ESN Italy, ONG che supporta la mobilità studentesca internazionale. Budget, grant e rendicontazione.',
+      'contact.label':  'Contatti',
+      'contact.title':  'Hai un progetto in mente?',
+      'contact.body':   'Scrivimi, parliamo. Nessun pitch elaborato — basta dirmi su cosa stai lavorando.',
+    },
+    en: {
+      'nav.cta':        'Get in touch',
+      'hero.sub':       'Freelance Business Developer and Project Manager. I work with startups and SMEs that want to grow for real.',
+      'hero.cta1':      "Let’s talk",
+      'hero.cta2':      'About me ↓',
+      'about.label':    'About',
+      'about.title':    'A bit of context',
+      'about.p1':       'I’m a freelancer based in Italy, with a degree in <strong>Electronic Engineering</strong> from Udine. I’ve lived and worked in Amsterdam, studied in Spain on Erasmus, and since July 2024 I’ve been working independently as a consultant.',
+      'about.p2':       'I like getting into projects with a concrete mindset: finding where growth gets stuck, putting the missing processes in place, and moving things forward. I work best with <strong>founders who need someone who does</strong>, not just someone who advises.',
+      'services.label': 'Services',
+      'services.title': 'What I do',
+      'svc1.name':      'Business Development',
+      'svc1.desc':      'New clients, partnerships and distribution channels. I help structure commercial growth in a sustainable and measurable way.',
+      'svc2.name':      'Project Management',
+      'svc2.desc':      'I manage technical and commercial projects end-to-end. Clear processes, aligned teams, deadlines met.',
+      'svc3.name':      'Operations',
+      'svc3.desc':      'Internal process optimisation, automation and tooling to do more with less. Less waste, more speed.',
+      'now.label':      'Now',
+      'now.title':      'What I’m working on',
+      'now.live':       'Ongoing',
+      'now.live2':      'Ongoing',
+      'now1.role':      'Freelance Consulting',
+      'now1.body':      'Supporting SMEs and startups in their operational and commercial growth. I work mainly in hybrid mode between Padova and remote.',
+      'now2.body':      'Financial management for ESN Italy, an NGO supporting international student mobility. Budget, grant applications and reporting.',
+      'contact.label':  'Contact',
+      'contact.title':  'Got a project in mind?',
+      'contact.body':   'Write to me, let’s talk. No elaborate pitch needed — just tell me what you’re working on.',
+    }
+  };
+
+  let currentLang = 'it';
+
+  function setLang(lang) {
+    currentLang = lang;
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll('[data-key]').forEach(el => {
+      const val = t[lang][el.dataset.key];
+      if (val !== undefined) el.innerHTML = val;
+    });
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => setLang(btn.dataset.lang));
+  });
+
+  // ── nav scroll ────────────────────────────────────────
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  // ── fade-in ───────────────────────────────────────────
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.fi').forEach(el => io.observe(el));
+</script>
+
+</body>
 </html>
-
