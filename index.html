@@ -362,6 +362,14 @@
       line-height: 1.75;
       padding-top: 4px;
     }
+    .now-body a, .now-role a {
+      color: var(--ink);
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+      transition: border-color 0.2s;
+    }
+    .now-body a:hover, .now-role a:hover { border-color: var(--ink); }
 
     /* ── SECTION BACKGROUNDS ── */
     #about-section    { background: #ffffff; }
@@ -482,7 +490,7 @@
     </div>
   </div>
   <div class="hero-bottom fi">
-    <p class="hero-sub" data-key="hero.sub">Freelance Business Developer e Project Manager. Lavoro con startup e PMI che vogliono crescere.</p>
+    <p class="hero-sub" data-key="hero.sub">Freelance Business Developer e Project Manager. Lavoro con startup e PMI che vogliono crescere supportando il loro business.</p>
     <div class="hero-links">
       <a href="#contact-section" class="btn-fill" data-key="hero.cta1">Parliamoci</a>
       <a href="#about" class="btn-text" data-key="hero.cta2">Chi sono ↓</a>
@@ -499,7 +507,7 @@
   </div>
   <div class="about-text">
     <p data-key="about.p1">Sono un freelance con base in Italia, laureato in <strong>Ingegneria Elettronica</strong> a Udine. Ho maturato esperienze di vita e lavoro all'estero, e da luglio 2024 lavoro in proprio come consulente.</p>
-    <p data-key="about.p2">Mi piace entrare nei progetti con concretezza: capire dove si blocca la crescita, mettere in piedi i processi che mancano e portare avanti le cose.</p>
+    <p data-key="about.p2">Mi piace entrare nei progetti con concretezza: capirne le caratteristiche chiave, strutturare i processi giusti e migliorarli nel tempo.</p>
   </div>
 </div>
 </div>
@@ -524,8 +532,8 @@
     </div>
     <div class="svc-row">
       <span class="svc-num">03</span>
-      <span class="svc-name" data-key="svc3.name">Operazioni</span>
-      <span class="svc-desc" data-key="svc3.desc">Ottimizzazione dei processi interni, automazioni e strumenti per fare di più con meno. Meno sprechi, più velocità.</span>
+      <span class="svc-name" data-key="svc3.name">Operations</span>
+      <span class="svc-desc" data-key="svc3.desc">Ottimizzazione dei processi interni, automazioni e strumenti per fare di più con meno.</span>
     </div>
   </div>
 </div>
@@ -544,14 +552,14 @@
         <span class="now-live" data-key="now.live">In corso</span>
         <span class="now-role" data-key="now1.role">Consulenza Freelance</span>
       </div>
-      <p class="now-body" data-key="now1.body">Supporto a PMI e startup nella crescita operativa e commerciale. Lavoro principalmente in modalità ibrida tra Padova e remoto.</p>
+      <p class="now-body" data-key="now1.body">Supporto a PMI e startup nella crescita operativa e commerciale, tra cui <a href="https://volvero.com" target="_blank" rel="noopener">volvero</a>. Lavoro principalmente in modalità ibrida tra Padova e Udine.</p>
     </div>
     <div class="now-row">
       <div class="now-meta">
         <span class="now-live" data-key="now.live2">In corso</span>
-        <span class="now-role">Treasurer @ ESN Italy</span>
+        <span class="now-role">Treasurer @ <a href="https://esn.it" target="_blank" rel="noopener">ESN Italy</a></span>
       </div>
-      <p class="now-body" data-key="now2.body">Gestione finanziaria per ESN Italy, ONG che supporta la mobilità studentesca internazionale. Budget, grant e rendicontazione.</p>
+      <p class="now-body" data-key="now2.body">Gestione finanziaria per <a href="https://esn.it" target="_blank" rel="noopener">ESN Italy</a>, ONG che supporta la mobilità studentesca internazionale. Budget, grant e rendicontazione.</p>
     </div>
   </div>
 </div>
@@ -565,7 +573,7 @@
       <h2 class="sec-title" data-key="contact.title">Hai un progetto in mente?</h2>
     </div>
     <div class="contact-body">
-      <p data-key="contact.body">Scrivimi, parliamo. Nessun pitch elaborato — basta dirmi su cosa stai lavorando.</p>
+      <p data-key="contact.body">Scrivimi e facciamo quattro chiacchiere.</p>
       <div class="contact-links">
         <a href="mailto:info@zatti.net" class="clink">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -590,41 +598,41 @@
   const t = {
     it: {
       'nav.cta':        'Scrivimi',
-      'hero.sub':       'Freelance Business Developer e Project Manager. Lavoro con startup e PMI che vogliono crescere.',
+      'hero.sub':       'Freelance Business Developer e Project Manager. Lavoro con startup e PMI che vogliono crescere supportando il loro business.',
       'hero.cta1':      'Parliamoci',
       'hero.cta2':      'Chi sono ↓',
       'about.label':    'Chi sono',
       'about.title':    'Un po\' di contesto',
       'about.p1':       'Sono un freelance con base in Italia, laureato in <strong>Ingegneria Elettronica</strong> a Udine. Ho maturato esperienze di vita e lavoro all\'estero, e da luglio 2024 lavoro in proprio come consulente.',
-      'about.p2':       'Mi piace entrare nei progetti con concretezza: capire dove si blocca la crescita, mettere in piedi i processi che mancano e portare avanti le cose.',
+      'about.p2':       'Mi piace entrare nei progetti con concretezza: capirne le caratteristiche chiave, strutturare i processi giusti e migliorarli nel tempo.',
       'services.label': 'Servizi',
       'services.title': 'Cosa faccio',
       'svc1.name':      'Business Development',
       'svc1.desc':      'Nuovi clienti, partnership e canali di distribuzione. Aiuto a strutturare la crescita commerciale in modo sostenibile e misurabile.',
       'svc2.name':      'Project Management',
       'svc2.desc':      "Coordino progetti tecnici e commerciali dall'inizio alla fine. Processi chiari, team allineati, scadenze rispettate.",
-      'svc3.name':      'Operazioni',
-      'svc3.desc':      'Ottimizzazione dei processi interni, automazioni e strumenti per fare di più con meno. Meno sprechi, più velocità.',
+      'svc3.name':      'Operations',
+      'svc3.desc':      'Ottimizzazione dei processi interni, automazioni e strumenti per fare di più con meno.',
       'now.label':      'Ora',
       'now.title':      'Su cosa lavoro',
       'now.live':       'In corso',
       'now.live2':      'In corso',
       'now1.role':      'Consulenza Freelance',
-      'now1.body':      'Supporto a PMI e startup nella crescita operativa e commerciale. Lavoro principalmente in modalità ibrida tra Padova e remoto.',
-      'now2.body':      'Gestione finanziaria per ESN Italy, ONG che supporta la mobilità studentesca internazionale. Budget, grant e rendicontazione.',
+      'now1.body':      'Supporto a PMI e startup nella crescita operativa e commerciale, tra cui <a href="https://volvero.com" target="_blank" rel="noopener">volvero</a>. Lavoro principalmente in modalità ibrida tra Padova e Udine.',
+      'now2.body':      'Gestione finanziaria per <a href="https://esn.it" target="_blank" rel="noopener">ESN Italy</a>, ONG che supporta la mobilità studentesca internazionale. Budget, grant e rendicontazione.',
       'contact.label':  'Contatti',
       'contact.title':  'Hai un progetto in mente?',
-      'contact.body':   'Scrivimi, parliamo. Nessun pitch elaborato — basta dirmi su cosa stai lavorando.',
+      'contact.body':   'Scrivimi e facciamo quattro chiacchiere.',
     },
     en: {
       'nav.cta':        'Get in touch',
-      'hero.sub':       'Freelance Business Developer and Project Manager. I work with startups and SMEs that want to grow.',
+      'hero.sub':       'Freelance Business Developer and Project Manager. I work with startups and SMEs that want to grow by supporting their business.',
       'hero.cta1':      "Let's talk",
       'hero.cta2':      'About me ↓',
       'about.label':    'About',
       'about.title':    'A bit of context',
       'about.p1':       'I\'m a freelancer based in Italy, with a degree in <strong>Electronic Engineering</strong> from Udine. I have experience living and working abroad, and since July 2024 I\'ve been working independently as a consultant.',
-      'about.p2':       'I like getting into projects with a concrete mindset: finding where growth gets stuck, putting the missing processes in place, and moving things forward.',
+      'about.p2':       'I like getting into projects with a concrete mindset: understanding their key characteristics, structuring the right processes and improving them over time.',
       'services.label': 'Services',
       'services.title': 'What I do',
       'svc1.name':      'Business Development',
@@ -632,17 +640,17 @@
       'svc2.name':      'Project Management',
       'svc2.desc':      'I manage technical and commercial projects end-to-end. Clear processes, aligned teams, deadlines met.',
       'svc3.name':      'Operations',
-      'svc3.desc':      'Internal process optimisation, automation and tooling to do more with less. Less waste, more speed.',
+      'svc3.desc':      'Internal process optimisation, automation and tooling to do more with less.',
       'now.label':      'Now',
       'now.title':      "What I'm working on",
       'now.live':       'Ongoing',
       'now.live2':      'Ongoing',
       'now1.role':      'Freelance Consulting',
-      'now1.body':      'Supporting SMEs and startups in their operational and commercial growth. I work mainly in a hybrid setup between Padova and remote work.',
-      'now2.body':      'Financial management for ESN Italy, an NGO supporting international student mobility. Budget, grant applications and reporting.',
+      'now1.body':      'Supporting SMEs and startups in their operational and commercial growth, including <a href="https://volvero.com" target="_blank" rel="noopener">volvero</a>. I work mainly in a hybrid setup between Padova and Udine.',
+      'now2.body':      'Financial management for <a href="https://esn.it" target="_blank" rel="noopener">ESN Italy</a>, an NGO supporting international student mobility. Budget, grant applications and reporting.',
       'contact.label':  'Contact',
       'contact.title':  'Got a project in mind?',
-      'contact.body':   "Write to me, let's talk. No elaborate pitch needed — just tell me what you're working on.",
+      'contact.body':   "Write to me and let's have a chat.",
     }
   };
 
@@ -687,7 +695,7 @@
   });
 
   // ── emoji cycle ───────────────────────────────────────
-  const emojis = ['👋','💼','🚀','📈','🤝','🎯'];
+  const emojis = ['👋','💼','🚀','📈','🤝','🎯','⚡','🌍','💡','🛠️','📊','🏆'];
   let emojiIdx = 0;
   const emojiEl = document.getElementById('hero-emoji');
   setInterval(() => {
