@@ -197,6 +197,7 @@
     color: var(--muted);
     font-weight: 400;
   }
+  li .k.alone::after { content: none; }
 
   .bullets li {
     padding-left: 18px;
@@ -259,16 +260,15 @@
 
   <section>
     <h2 data-k="about.h">Chi sono</h2>
-    <p data-k="about.p1">Consulente freelance con base tra <strong>Padova</strong> e <strong>Udine</strong>. Laureato in <strong>Ingegneria Elettronica</strong> a Udine, ho vissuto e lavorato all'estero prima di mettermi in proprio nel 2024.</p>
-    <p data-k="about.p2">Lavoro con startup e PMI che vogliono crescere. Entro nei progetti con concretezza: capisco cosa conta davvero, strutturo i processi giusti e li miglioro nel tempo.</p>
+    <p data-k="about.p1">Consulente freelance con base tra <strong>Padova</strong> e <strong>Udine</strong>. Con un background in <strong>Ingegneria Elettronica</strong>, oggi supporto startup e PMI nell'ottimizzazione dei processi interni, nell'automazione delle campagne e nell'acquisizione clienti.</p>
   </section>
 
   <section>
     <h2 data-k="svc.h">Cosa faccio</h2>
     <ul>
-      <li data-k="svc.1"><span class="k">Business Development</span>nuovi clienti, partnership e canali di distribuzione. Crescita commerciale sostenibile e misurabile.</li>
-      <li data-k="svc.2"><span class="k">Project Management</span>progetti tecnici e commerciali seguiti dall'inizio alla fine: processi chiari, team allineati, scadenze rispettate.</li>
-      <li data-k="svc.3"><span class="k">Operations</span>processi interni, automazioni e strumenti per fare di più con meno.</li>
+      <li data-k="svc.1"><span class="k">Business Development</span>campagne di acquisizione clienti, automazione e onboarding.</li>
+      <li data-k="svc.2"><span class="k">Automazione delle operations interne</span>Make, n8n, Zapier e altri.</li>
+      <li data-k="svc.3"><span class="k alone">Project e grant management</span></li>
     </ul>
   </section>
 
@@ -283,8 +283,8 @@
   <section>
     <h2 data-k="accr.h">Accreditamenti</h2>
     <ul class="bullets">
-      <li data-k="accr.1"><span class="k"><a href="https://www.unioncamerelombardia.it/progetti/dettaglio-progetto/elenco-fornitori-40" target="_blank" rel="noopener">Elenco Fornitori 4.0</a></span>iscritto all'elenco pubblico di Unioncamere Lombardia dei fornitori di servizi e tecnologie per la Transizione 4.0, a supporto dei Punti Impresa Digitale delle Camere di commercio.</li>
-      <li data-k="accr.2"><span class="k"><a href="https://www.innoveneto.org/php/schedaCITT.php?citt=4864" target="_blank" rel="noopener">Catalogo Fornitori Innoveneto</a></span>iscritto come fornitore sul portale della Regione Veneto per l'innovazione e il trasferimento tecnologico.</li>
+      <li data-k="accr.1"><a href="https://www.unioncamerelombardia.it/progetti/dettaglio-progetto/elenco-fornitori-40" target="_blank" rel="noopener">Elenco Fornitori 4.0</a></li>
+      <li data-k="accr.2"><a href="https://www.innoveneto.org/php/schedaCITT.php?citt=4864" target="_blank" rel="noopener">Catalogo Fornitori Innoveneto</a></li>
     </ul>
   </section>
 
@@ -307,18 +307,17 @@
       'tagline':   'Business Developer e Project Manager freelance',
       'place':     'Padova / Udine · Italia',
       'about.h':   'Chi sono',
-      'about.p1':  "Consulente freelance con base tra <strong>Padova</strong> e <strong>Udine</strong>. Laureato in <strong>Ingegneria Elettronica</strong> a Udine, ho vissuto e lavorato all'estero prima di mettermi in proprio nel 2024.",
-      'about.p2':  'Lavoro con startup e PMI che vogliono crescere. Entro nei progetti con concretezza: capisco cosa conta davvero, strutturo i processi giusti e li miglioro nel tempo.',
+      'about.p1':  "Consulente freelance con base tra <strong>Padova</strong> e <strong>Udine</strong>. Con un background in <strong>Ingegneria Elettronica</strong>, oggi supporto startup e PMI nell'ottimizzazione dei processi interni, nell'automazione delle campagne e nell'acquisizione clienti.",
       'svc.h':     'Cosa faccio',
-      'svc.1':     '<span class="k">Business Development</span>nuovi clienti, partnership e canali di distribuzione. Crescita commerciale sostenibile e misurabile.',
-      'svc.2':     "<span class=\"k\">Project Management</span>progetti tecnici e commerciali seguiti dall'inizio alla fine: processi chiari, team allineati, scadenze rispettate.",
-      'svc.3':     '<span class="k">Operations</span>processi interni, automazioni e strumenti per fare di più con meno.',
+      'svc.1':     '<span class="k">Business Development</span>campagne di acquisizione clienti, automazione e onboarding.',
+      'svc.2':     '<span class="k">Automazione delle operations interne</span>Make, n8n, Zapier e altri.',
+      'svc.3':     '<span class="k alone">Project e grant management</span>',
       'now.h':     'Ora',
       'now.1':     '<span class="k">Consulenza freelance</span>supporto a PMI e startup nella crescita operativa e commerciale, tra cui <a href="https://volvero.com" target="_blank" rel="noopener">volvero</a>.',
       'now.2':     '<span class="k">Treasurer @ <a href="https://esn.it" target="_blank" rel="noopener">ESN Italy</a></span>gestione finanziaria della ONG che supporta la mobilità studentesca internazionale: budget, grant e rendicontazione.',
       'accr.h':    'Accreditamenti',
-      'accr.1':    '<span class="k"><a href="https://www.unioncamerelombardia.it/progetti/dettaglio-progetto/elenco-fornitori-40" target="_blank" rel="noopener">Elenco Fornitori 4.0</a></span>iscritto all\'elenco pubblico di Unioncamere Lombardia dei fornitori di servizi e tecnologie per la Transizione 4.0, a supporto dei Punti Impresa Digitale delle Camere di commercio.',
-      'accr.2':    '<span class="k"><a href="https://www.innoveneto.org/php/schedaCITT.php?citt=4864" target="_blank" rel="noopener">Catalogo Fornitori Innoveneto</a></span>iscritto come fornitore sul portale della Regione Veneto per l\'innovazione e il trasferimento tecnologico.',
+      'accr.1':    '<a href="https://www.unioncamerelombardia.it/progetti/dettaglio-progetto/elenco-fornitori-40" target="_blank" rel="noopener">Elenco Fornitori 4.0</a>',
+      'accr.2':    '<a href="https://www.innoveneto.org/php/schedaCITT.php?citt=4864" target="_blank" rel="noopener">Catalogo Fornitori Innoveneto</a>',
       'contact.h': 'Contatti',
       'contact.p': 'Hai un progetto in mente? <a href="mailto:nico.zatti@gmail.com">Scrivimi via email</a> o su <a href="https://www.linkedin.com/in/nicozatti/" target="_blank" rel="noopener">LinkedIn</a>.',
       'ui.theme':  'Cambia tema'
@@ -327,18 +326,17 @@
       'tagline':   'Freelance Business Developer and Project Manager',
       'place':     'Padova / Udine · Italy',
       'about.h':   'About',
-      'about.p1':  'Freelance consultant based between <strong>Padova</strong> and <strong>Udine</strong>. I hold a degree in <strong>Electronic Engineering</strong> from Udine, lived and worked abroad, and went independent in 2024.',
-      'about.p2':  'I work with startups and SMEs that want to grow. I get into projects hands-on: understand what actually matters, put the right processes in place and keep improving them.',
+      'about.p1':  'Freelance consultant based between <strong>Padova</strong> and <strong>Udine</strong>. With a background in <strong>Electronic Engineering</strong>, I now support startups and SMEs in optimizing internal processes, campaign automation and customer acquisition.',
       'svc.h':     'What I do',
-      'svc.1':     '<span class="k">Business Development</span>new clients, partnerships and distribution channels. Commercial growth that is sustainable and measurable.',
-      'svc.2':     '<span class="k">Project Management</span>technical and commercial projects end to end: clear processes, aligned teams, deadlines met.',
-      'svc.3':     '<span class="k">Operations</span>internal processes, automation and tooling to do more with less.',
+      'svc.1':     '<span class="k">Business Development</span>customer acquisition campaigns, automation and onboarding.',
+      'svc.2':     '<span class="k">Internal operations intelligence</span>Make, n8n, Zapier and more.',
+      'svc.3':     '<span class="k alone">Project and grant management</span>',
       'now.h':     'Now',
       'now.1':     '<span class="k">Freelance consulting</span>helping SMEs and startups with operational and commercial growth, including <a href="https://volvero.com" target="_blank" rel="noopener">volvero</a>.',
       'now.2':     '<span class="k">Treasurer @ <a href="https://esn.it" target="_blank" rel="noopener">ESN Italy</a></span>financial management for the NGO supporting international student mobility: budgets, grants and reporting.',
       'accr.h':    'Accreditations',
-      'accr.1':    '<span class="k"><a href="https://www.unioncamerelombardia.it/progetti/dettaglio-progetto/elenco-fornitori-40" target="_blank" rel="noopener">Elenco Fornitori 4.0</a></span>listed in Unioncamere Lombardia\'s public register of suppliers of Industry 4.0 services and technologies, supporting the Chambers of Commerce\'s Digital Enterprise Points.',
-      'accr.2':    '<span class="k"><a href="https://www.innoveneto.org/php/schedaCITT.php?citt=4864" target="_blank" rel="noopener">Innoveneto Supplier Catalogue</a></span>registered as a supplier on the Veneto Region\'s portal for innovation and technology transfer.',
+      'accr.1':    '<a href="https://www.unioncamerelombardia.it/progetti/dettaglio-progetto/elenco-fornitori-40" target="_blank" rel="noopener">Elenco Fornitori 4.0</a>',
+      'accr.2':    '<a href="https://www.innoveneto.org/php/schedaCITT.php?citt=4864" target="_blank" rel="noopener">Innoveneto Supplier Catalogue</a>',
       'contact.h': 'Contact',
       'contact.p': 'Got a project in mind? <a href="mailto:nico.zatti@gmail.com">Drop me an email</a> or reach me on <a href="https://www.linkedin.com/in/nicozatti/" target="_blank" rel="noopener">LinkedIn</a>.',
       'ui.theme':  'Switch theme'
