@@ -129,22 +129,16 @@
 
   /* ── header ── */
   header {
+    text-align: center;
     padding: 56px 0 8px;
   }
-  /* name on the left, photo on the right; 92px is the largest the 200px
-     source can fill on a 2x screen without softening */
-  .head-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 28px;
-  }
   header img {
-    width: 92px;
-    height: 92px;
+    width: 76px;
+    height: 76px;
     border-radius: 50%;
     object-fit: cover;
-    flex: none;
+    object-position: center top;
+    margin: 0 auto 22px;
     display: block;
   }
   h1 {
@@ -158,17 +152,18 @@
     font-size: 1.05rem;
     font-weight: 600;
     color: var(--text);
-    margin-top: 5px;
+    margin-top: 8px;
   }
   .place {
     font-size: .9rem;
     color: var(--muted);
-    margin-top: 2px;
+    margin-top: 4px;
   }
   .social {
     display: flex;
+    justify-content: center;
     gap: 18px;
-    margin-top: 22px;
+    margin-top: 20px;
   }
   .social a {
     border: 0;
@@ -225,11 +220,6 @@
   @media (max-width: 520px) {
     h1 { font-size: 1.8rem; }
     header { padding-top: 40px; }
-    .head-row {
-      flex-direction: column-reverse;
-      align-items: flex-start;
-      gap: 18px;
-    }
   }
 </style>
 </head>
@@ -249,14 +239,10 @@
 
 <main>
   <header>
-    <div class="head-row">
-      <div>
-        <h1>Nicola Zatti</h1>
-        <p class="tagline" data-k="tagline">Business Developer e Project Manager freelance</p>
-        <p class="place" data-k="place">Padova / Udine · Italia</p>
-      </div>
-      <img src="images/profile_img.png" alt="Nicola Zatti" width="92" height="92">
-    </div>
+    <img src="images/profile_img.png" alt="Nicola Zatti" width="76" height="76">
+    <h1>Nicola Zatti</h1>
+    <p class="tagline" data-k="tagline">Business Developer e Project Manager freelance</p>
+    <p class="place" data-k="place">Padova / Udine · Italia</p>
     <nav class="social">
       <a href="mailto:nico.zatti@gmail.com" aria-label="Email">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
